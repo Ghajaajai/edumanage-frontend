@@ -1,0 +1,175 @@
+/* Layout dasar dan background */
+.profile-body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.profile-body::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('../assets/profile.png') no-repeat center center;
+  background-size: cover;
+  filter: brightness(0.9);
+  z-index: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 30px;
+  width: 90%;
+  max-width: 900px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #fff;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Judul dinamis */
+.profile-header h1 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 26px;
+  margin-bottom: 30px;
+  animation: slideDown 0.8s ease-in-out;
+}
+
+/* Layout 2 kolom */
+.profile-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap; /* agar responsif di layar kecil */
+}
+
+/* Kolom kiri dan kanan */
+.profile-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+.profile-info {
+  padding-left: 40px;
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  padding-top: 5px;
+}
+
+.profile-update {
+  padding-left: 20px;
+}
+
+/* Info statis */
+#profile-info p {
+  font-size: 16px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 8px;
+}
+
+/* Label dan input */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Tombol */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  flex: 1;
+  background-color: rgba(38, 50, 56, 0.8);
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: rgba(38, 50, 56, 1);
+}
+
+/* Status Message */
+#status-message {
+  margin-top: 20px;
+  font-style: italic;
+  color: #ffcccb;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .profile-flex {
+    flex-direction: column;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .profile-header h1 {
+    font-size: 20px;
+  }
+}

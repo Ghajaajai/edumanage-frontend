@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arsip Akademik - Abbott Elementary Service</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body class="dashboard-body">
+    <div class="sidebar">
+      <div class="sidebar-logo">
+        <img src="./assets/logo.png" alt="Logo" />
+      </div>
+      <h2>Menu</h2>
+      <ul>
+        <li>
+          <a href="./dashboard.html" id="btnHistory">
+            <!-- Icon Home -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M3 9.5L12 3l9 6.5v11a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-11z"
+              />
+            </svg>
+            Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="./pengajuan.html" id="btnPengajuan">
+            <!-- Icon File -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zM15 9V3.5L20.5 9H15z"
+              />
+            </svg>
+            Pengajuan Izin
+          </a>
+        </li>
+        <li>
+          <a href="./arsip.html" id="btnArsip">
+            <!-- Icon Archive -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path
+                d="M4 4h16v3H4zM4 7v12a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7zM10 12h4v2h-4z"
+              />
+            </svg>
+            Arsip
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="main">
+      <header>
+        <div class="user-section" id="userDropdown">
+          <span class="user-name"
+            >Hallo, <span id="userName">Pengguna</span></span
+          >
+          <div class="dropdown-content" id="dropdownContent">
+            <a href="./profile.html" id="profileLink">Profile</a>
+            <a href="./login.html" id="logoutBtn">Logout</a>
+          </div>
+        </div>
+      </header>
+
+      <div class="content" id="arsipContent">
+        <div class="card glassy-form">
+          <h2>UPLOAD ARSIP</h2>
+          <form id="formArsip" enctype="multipart/form-data">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="namaFile">📄 Nama File</label>
+                <input
+                  type="text"
+                  id="namaFile"
+                  name="namaFile"
+                  placeholder="Contoh: Izin_Kuliah_April_2025.pdf"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="file">📎 Pilih File</label>
+                <input type="file" id="file" name="file" required />
+              </div>
+            </div>
+            <button type="submit" class="upload-btn">Upload File</button>
+            <div id="uploadStatus" class="upload-status"></div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2>ARSIP AKADEMIK</h2>
+          <table id="arsipTable">
+            <thead>
+              <tr>
+                <th>Nama File</th>
+                <th>Tanggal</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      &copy; 2025 Ghaza-Anggit. All rights reserved.
+    </footer>
+
+    <script src="script/api.js"></script>
+    <script src="script/auth.js"></script>
+    <script src="script/arsip.js"></script>
+  </body>
+</html>

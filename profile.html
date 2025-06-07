@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil | Abbott Elementary Service</title>
+  <link rel="stylesheet" href="style/profile.css" />
+</head>
+<body class="profile-body">
+  <div class="profile-container">
+    <div class="profile-header">
+      <h1 id="dynamic-title">Account Setting</h1>
+    </div>
+
+    <div class="profile-flex">
+      <div class="profile-section profile-info">
+        <h3>Informasi Akun</h3>
+        <p><strong>Nama:</strong> <span id="profile-name">Loading...</span></p>
+        <p><strong>Email:</strong> <span id="profile-email">Loading...</span></p>
+        <p><strong>Nomor Telepon:</strong> <span id="profile-nomorTelepon">Loading...</span></p>
+      </div>
+
+      <div class="profile-section profile-update">
+        <h3>Perbarui Informasi</h3>
+        <form id="update-profile-form">
+          <label for="name">Nama</label>
+          <input type="text" id="name" placeholder="Nama">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Email">
+
+          <label for="nomorTelepon">Nomor Telepon</label>
+          <input type="text" id="nomorTelepon" placeholder="Nomor Telepon">
+
+          <div class="button-group">
+            <button id="update-btn" type="button">Update</button>
+            <button id="back-btn" type="button">Back</button>
+          </div>
+        </form>
+        <p id="status-message"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script/profile.js"></script>
+</body>
+</html>
