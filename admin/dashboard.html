@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard EduManage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-logo">
+    <img src="../assets/logo.png" alt="Logo" />
+    </div>
+    <h2>EduManage Admin</h2>
+    <nav>
+      <a href="./dashboard.html" id="nav-dashboard" class="active">Dashboard</a>
+      <a href="./data_users.html" id="nav-users">Data Users</a>
+    </nav>
+  </div>
+  <div class="main">
+    <header>
+      <div class="greeting">Halo, <span id="adminName">Admin</span></div>
+      <div>
+        <input type="search" id="searchBox" placeholder="🔍 Cari..." />
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <section class="nav-cards">
+      <div class="card-link" id="card-dashboard">📚 Dashboard</div>
+      <div class="card-link" id="card-users">👥 Data Users</div>
+    </section>
+
+    <section class="history-section">
+  <h3>Riwayat Pengajuan Terbaru</h3>
+  <div class="table-wrapper">
+    <table id="historyTable">
+      <thead>
+        <tr><th>#</th><th>Nama</th><th>Keterangan</th><th>Tanggal</th><th>File</th><th>Aksi</th></tr>
+      </thead>
+      <tbody id="historyTableBody"></tbody>
+    </table>
+    <p id="historyError" style="color: red;"></p> <!-- Tambahkan ini -->
+  </div>
+</section>
+
+  </div>
+  <script src="../script/auth.js"></script>
+  <script src="../script/api.js"></script>
+  <script src="./script/dashboard_admin.js"></script>
+</body>
+</html>

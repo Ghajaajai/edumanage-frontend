@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const updatedEmail = emailInput.value.trim();
     const updatedNomor = nomorInput.value.trim();
 
-    if (!updatedNama || !updatedEmail || updatedNomor) {
+    if (!updatedNama || !updatedEmail) {
       alert("Nama dan email tidak boleh kosong.");
       return;
     }

@@ -10,5 +10,12 @@ function getUser() {
 }
 function logout() {
   localStorage.clear();
-  window.location.href = 'login.html';
+
+  const currentPath = window.location.pathname;
+
+    if (currentPath.includes('/admin/')) {
+    window.location.href = '../login.html'; // naik 1 folder ke root
+  } else {
+    window.location.href = 'login.html';
+  }
 }

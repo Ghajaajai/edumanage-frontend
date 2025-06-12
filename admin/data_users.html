@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Users - EduManage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <img src="../assets/logo.png" alt="Logo" />
+    </div>
+    <h2>EduManage Admin</h2>
+    <nav>
+      <a href="./dashboard.html" id="nav-dashboard">Dashboard</a>
+      <a href="./data_users.html" id="nav-users" class="active">Data Users</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <header>
+      <div class="greeting">Halo, <span id="adminName">Admin</span></div>
+      <div>
+        <input type="search" id="searchBox" placeholder="🔍 Cari..." />
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <section class="user-section">
+      <h3>Data Users</h3>
+      <div class="table-wrapper">
+        <table id="userTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nama</th>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Alamat</th>
+              <th>Nomor Telepon</th>
+              <th>Tanggal Lahir</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody"></tbody>
+        </table>
+        <p id="userError" style="color: red;"></p>
+      </div>
+
+      <!-- Modal Edit User -->
+      <div id="editUserModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeEditModal()">&times;</span>
+          <h3>Edit User</h3>
+          <input type="hidden" id="editUserId" />
+          <input type="text" id="editNama" placeholder="Nama" />
+          <input type="email" id="editEmail" placeholder="Email" />
+          <input type="text" id="editRole" placeholder="Role" />
+          <input type="text" id="editNomor" placeholder="Nomor Telepon" />
+          <input type="text" id="editAlamat" placeholder="Alamat" />
+          <input type="date" id="editTanggalLahir" />
+          <div style="margin-top: 10px;">
+            <button class="action-btn view-btn" onclick="submitUserUpdate()">Simpan</button>
+            <button class="action-btn delete-btn" onclick="closeEditModal()">Batal</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="../script/auth.js"></script>
+  <script src="../script/api.js"></script>
+  <script src="./script/data_users.js"></script>
+</body>
+</html>
