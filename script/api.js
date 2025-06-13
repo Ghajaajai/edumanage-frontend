@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "http://13.214.206.178:8080";
 
 const api = {
   login: async (email, password) => {

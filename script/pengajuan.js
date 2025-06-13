@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://localhost:3000/izin", {
+      const res = await fetch("http://13.214.206.178:8080/izin", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
