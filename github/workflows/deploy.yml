@@ -1,0 +1,35 @@
+name: Deploy Frontend to EC2 via Apache
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v3
+
+      - name: Upload files to EC2
+        uses: appleboy/scp-action@v0.1.10
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_KEY }}
+          source: "./*"
+          target: "/tmp/edumanage-frontend"
+
+      - name: Deploy to Apache Web Root
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_KEY }}
+          script: |
+            sudo rm -rf /var/www/html/edumanage-frontend/*
+            sudo cp -r /tmp/edumanage-frontend/* /var/www/html/edumanage-frontend/
+            sudo chown -R apache:apache /var/www/html/edumanage-frontend
+            sudo systemctl restart httpd
