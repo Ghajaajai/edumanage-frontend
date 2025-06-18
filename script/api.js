@@ -1,4 +1,4 @@
-const BASE_URL = "http://13.214.206.178:8080";
+const BASE_URL = "http://54.254.127.79:3000/";
 
 const api = {
   login: async (email, password) => {

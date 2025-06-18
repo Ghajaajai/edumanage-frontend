@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append("file", file);
 
     try {
-      const res = await fetch("http://13.214.206.178:8080/arsip-akademik", {
+      const res = await fetch("http://54.254.127.79:3000//arsip-akademik", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

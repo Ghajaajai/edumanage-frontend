@@ -1,4 +1,4 @@
-window.BASE_URL = window.BASE_URL || "http://13.214.206.178:8080";
+window.BASE_URL = window.BASE_URL || "http://54.254.127.79:3000/";
 const token = localStorage.getItem("token");
 
 async function loadUsers() {

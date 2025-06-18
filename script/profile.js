@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const token = localStorage.getItem("token");
-  const API_BASE = "http://13.214.206.178:8080"; // ganti jika endpoint beda
+  const API_BASE = "http://54.254.127.79:3000/"; // ganti jika endpoint beda
 
   const nameElement = document.getElementById("profile-name");
   const emailElement = document.getElementById("profile-email");
