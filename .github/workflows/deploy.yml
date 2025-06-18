@@ -20,7 +20,7 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
           source: "./*"
-          target: "/tmp/edumanage-frontend"
+          target: "/tmp/"
 
       - name: Deploy to Apache Web Root
         uses: appleboy/ssh-action@v0.1.10
@@ -29,7 +29,7 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_KEY }}
           script: |
-            sudo rm -rf /var/www/html/edumanage-frontend/*
-            sudo cp -r /tmp/edumanage-frontend/* /var/www/html/edumanage-frontend/
-            sudo chown -R apache:apache /var/www/html/edumanage-frontend
+            sudo rm -rf /var/www/html/*
+            sudo cp -r /tmp/edumanage-frontend/* /var/www/html/
+            sudo chown -R apache:apache /var/www/html/
             sudo systemctl restart httpd
